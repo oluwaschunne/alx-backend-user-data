@@ -23,7 +23,7 @@ class BasicAuth(Auth):
             The Base64 part of the Authorization header, or None if invalid.
 
         """
-        if 
+        if
         authorization_header is None or type(authorization_header) is not str:
             return None
 
