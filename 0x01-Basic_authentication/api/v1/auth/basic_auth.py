@@ -13,17 +13,18 @@ from .auth import Auth
 class BasicAuth(Auth):
     """Basic authentication implementation"""
 
-    def extract_base64_authorization_header(self, authorization_header: str) -> str:
-        """Extracts the Base64 part of the Authorization header for Basic Authentication.
+    def extract_base64_authorization_header(self, authorization_header):
+        """Base64 part of the Authorization header for Basic Authentication
 
         Args:
             authorization_header (str): The Authorization header value.
-        
+
         Returns:
-            str: The Base64 part of the Authorization header, or None if invalid.
-        
+            The Base64 part of the Authorization header, or None if invalid.
+
         """
-        if authorization_header is None or type(authorization_header) is not str:
+        if 
+        authorization_header is None or type(authorization_header) is not str:
             return None
 
         if not authorization_header.startswith("Basic "):
@@ -44,7 +45,7 @@ class BasicAuth(Auth):
             val = base64.b64decode(base64_authorization_header).decode("utf-8")
             return val
 
-        except:
+        except Exception:
             return None
 
     def extract_user_credentials(
@@ -92,7 +93,8 @@ class BasicAuth(Auth):
         if decoded_auth_head is None:
             return
 
-        extracted_user_credentials = self.extract_user_credentials(decoded_auth_head)
+        extracted_user_credentials = self.extract_user_credentials(
+            decoded_auth_head)
         print(extracted_user_credentials)
         if extracted_user_credentials[0] is None:
             return
