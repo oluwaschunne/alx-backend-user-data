@@ -9,7 +9,6 @@ from models.user import User
 
 from .auth import Auth
 
-
 class BasicAuth(Auth):
     """Basic authentication implementation"""
 
@@ -23,8 +22,8 @@ class BasicAuth(Auth):
             The Base64 part of the Authorization header, or None if invalid.
 
         """
-        if
-        authorization_header is None or type(authorization_header) is not str:
+        if authorization_header is None or \
+                type(authorization_header) is not str:
             return None
 
         if not authorization_header.startswith("Basic "):
