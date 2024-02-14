@@ -12,12 +12,19 @@ class Auth:
         """require authentication
         return
             - False"""
-        if path is None or excluded_paths is None or len(excluded_paths) == 0:
+        if not excluded_paths or not path:
             return True
-        if path[-1] != "/":
-            path += "/"
+        if path.endswith("/") or path.endswith("*"):
+            path = path[:-1]
+        for idx, ex in enumerate(excluded_paths):
+            if ex.endswith("/"):
+                excluded_paths[idx] = ex[:-1]
 
-        return path not in excluded_paths
+        for pth in excluded_paths:
+            if path in pth:
+                return False
+
+        return False
 
     def authorization_header(self, request=None) -> str:
         """require authorization header
