@@ -25,7 +25,7 @@ class Auth:
             if path in pth:
                 return False
 
-        return True
+        return False
 
     def authorization_header(self, request=None) -> str:
         """require authorization header
