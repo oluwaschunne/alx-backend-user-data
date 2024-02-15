@@ -38,7 +38,7 @@ class Auth:
         if val:
             return val
         else:
-            return False
+            return None
 
     def current_user(self, request=None) -> TypeVar("User"):
         """get current user
