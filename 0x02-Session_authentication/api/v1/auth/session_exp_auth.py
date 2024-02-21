@@ -9,8 +9,8 @@ from uuid import uuid4
 
 from models.user import User
 
+from datetime import datetime, timedelta
 from .session_auth import SessionAuth
-from datetime
 
 
 class SessionExpAuth(SessionAuth):
