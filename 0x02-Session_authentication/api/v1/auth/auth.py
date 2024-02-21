@@ -5,6 +5,7 @@ Route module for Auth
 from typing import List, TypeVar
 from os import getenv
 
+
 class Auth:
     """auth class for authentication"""
 
