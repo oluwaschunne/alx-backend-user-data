@@ -20,9 +20,12 @@ class SessionExpAuth(SessionAuth):
         """Superlit"""
         # super().__init__()
         ind = getenv("SESSION_DURATION")
-        try:
-            self.session_duration = int(ind)
-        except ValueError:
+        if ind is not None:
+            try:
+                self.session_duration = int(ind)
+            except ValueError:
+                self.session_duration = 0
+        else:
             self.session_duration = 0
 
     def create_session(self, user_id: str = None) -> str:
