@@ -36,8 +36,7 @@ class SessionExpAuth(SessionAuth):
         if session_id is None:
             return None
 
-        self.user_id_by_session_id[session_id] = {}
-        session_dict = {
+        self.user_id_by_session_id[session_id] = {
             "user_id": user_id,
             'created_at': datetime.now()
         }
