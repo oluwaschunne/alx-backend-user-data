@@ -17,6 +17,7 @@ class SessionExpAuth(SessionAuth):
     """Session authentication implementation"""
 
     def __init__(self) -> None:
+        """Superlit"""
         # super().__init__()
         ind = getenv("SESSION_DURATION")
         try:
