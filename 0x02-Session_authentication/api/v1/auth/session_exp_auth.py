@@ -51,8 +51,8 @@ class SessionExpAuth(SessionAuth):
 
         session_data = self.user_id_by_session_id.get(session_id)
 
-        if session_data and (self.session_duration is 
-        None or self.session_duration ==0):
+        if session_data and (self.session_duration is
+                             None or self.session_duration == 0):
             return session_data.get("user_id")
 
         return None
